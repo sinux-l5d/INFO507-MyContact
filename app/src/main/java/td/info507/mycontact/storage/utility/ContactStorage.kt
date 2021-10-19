@@ -6,7 +6,7 @@ import td.info507.mycontact.model.Contact
 
 object ContactStorage {
 
-    private const val PREF_NAME = "td.info507.mykontact.preferences"
+    private const val PREF_NAME = "sh.sinux.mykontact.preferences"
     private const val PREF_STORAGE = "storage"
     const val PREF_STORAGE_NONE = 0
     const val PREF_STORAGE_FILE_JSON = 1
@@ -31,8 +31,8 @@ object ContactStorage {
         when (getPreferencesStorage(context)) {
             PREF_STORAGE_NONE -> storage = ContactNoneStorage()
             PREF_STORAGE_FILE_JSON -> storage = ContactJSonFileStorage.get(context)
-            PREF_STORAGE_FILE_CSV -> storage = ContactCSVFileStorage.get(context)
-            PREF_STORAGE_DATA_BASE -> storage = ContactDataBaseStorage.get(context)
+            //PREF_STORAGE_FILE_CSV -> storage = ContactCSVFileStorage.get(context)
+            //PREF_STORAGE_DATA_BASE -> storage = ContactDataBaseStorage.get(context)
         }
         return storage
     }

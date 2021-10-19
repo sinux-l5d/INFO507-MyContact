@@ -28,8 +28,11 @@ class ContactJSonFileStorage private constructor(context: Context) :
         val jsonObject = JSONObject()
         jsonObject.put(Contact.CONTACT_ID, id)
         jsonObject.put(Contact.CONTACT_FIRST_NAME, obj.firstName)
-        jsonObject.put(Contact.CONTACT_FIRST_NAME, obj.firstName)
-        TODO('Next properties')
+        jsonObject.put(Contact.CONTACT_LAST_NAME, obj.lastName)
+        jsonObject.put(Contact.CONTACT_PHONE, obj.phone)
+        jsonObject.put(Contact.CONTACT_HOME, obj.home)
+        jsonObject.put(Contact.CONTACT_MAIL, obj.mail)
+        jsonObject.put(Contact.CONTACT_LOCATION, obj.location)
         return jsonObject
     }
 

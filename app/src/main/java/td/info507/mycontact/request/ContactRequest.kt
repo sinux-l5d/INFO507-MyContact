@@ -6,8 +6,10 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONObject
+import td.info507.mycontact.R
 import td.info507.mycontact.dialog.Updatable
 import td.info507.mycontact.model.Contact
+import td.info507.mycontact.storage.utility.ContactStorage
 
 class ContactRequest(private val context: Context, updatable: Updatable) {
     companion object {

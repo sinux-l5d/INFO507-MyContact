@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import td.info507.mycontact.model.Contact
 import td.info507.mycontact.R
 import td.info507.mycontact.adapter.ContactAdapter
@@ -19,6 +20,7 @@ class ListActivity : AppCompatActivity(), Updatable {
 
     var contacts : ArrayList<Contact> = arrayListOf()
     lateinit var list: RecyclerView
+    var refreshLayout = findViewById<SwipeRefreshLayout>(R.id.contact_refresh)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
