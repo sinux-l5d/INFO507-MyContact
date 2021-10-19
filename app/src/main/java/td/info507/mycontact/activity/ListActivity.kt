@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import td.info507.mycontact.model.Contact
 import td.info507.mycontact.R
 import td.info507.mycontact.adapter.ContactAdapter
+import td.info507.mycontact.dialog.Updatable
 
-class ListActivity : AppCompatActivity() {
+class ListActivity : AppCompatActivity(), Updatable {
 
     companion object {
         val EXTRA_CONTACT = "EXTRA_CONTACT"
@@ -24,7 +25,7 @@ class ListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_list)
 
         contacts.add(
-            Contact("Pajean", "Romain", "0682369547",
+            Contact(0, "Pajean", "Romain", "0682369547",
                 "0452369874", "ror@gmail.com", "130 rue de la calvitie Le Bourget du Lac")
         )
 
@@ -45,6 +46,11 @@ class ListActivity : AppCompatActivity() {
                 return true
             }
         }
+    }
+
+    override fun update() {
+        list.adapter?.notifyDataSetChanged()
+        refreshLayout.isRefreshing = false
     }
 
 }
